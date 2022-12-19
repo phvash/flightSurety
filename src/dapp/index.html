@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>FlightSurety</title>
+            <!-- Include Bootstrap CDN -->
+            <!-- <link href=
+            "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+                    rel="stylesheet"> -->
+                <!-- <script src=
+            "https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js">
+                </script> -->
+                <!-- <script src=
+            "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js">
+                </script> -->
+             
+                <!-- Include Moment.js CDN -->
+                <!-- <script type="text/javascript" src=
+            "https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.min.js">
+                </script> -->
+             
+                <!-- Include Bootstrap DateTimePicker CDN -->
+                <!-- <link
+                    href=
+            "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/css/bootstrap-datetimepicker.min.css"
+                    rel="stylesheet"> -->
+             
+                <!-- <script src=
+            "https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.37/js/bootstrap-datetimepicker.min.js">
+                    </script> -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- <link href="flightsurety.css" rel="stylesheet"> -->
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="#">FlightSurety</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </nav>
+
+    <!-- <main class="container">
+        <div class="container">
+        <div id="display-wrapper" class="top-20">
+        </div>
+        <div class="row top-20">
+            <label class="form">Flight</label> <input type="text" id="flight-number"> <btn class="btn btn-primary" id="submit-oracle">Submit to Oracles</btn>
+        </div> -->
+
+        <!-- <div class="card text-center">
+            <div class="card-header">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div> -->
+
+        <!-- <div class="container"> -->
+            <!-- <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home1" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile1" role="tab" aria-controls="profile" aria-selected="false">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact1" role="tab" aria-controls="contact" aria-selected="false">Contact</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home1" role="tabpanel" aria-labelledby="home-tab">1</div>
+                <div class="tab-pane fade" id="profile1" role="tabpanel" aria-labelledby="profile-tab">2</div>
+                <div class="tab-pane fade" id="contact1" role="tabpanel" aria-labelledby="contact-tab">3</div>
+            </div> -->
+        <!-- </div> -->
+    <!-- </main> -->
+
+    <main role="main" class="container">
+        <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm">
+          <div class="lh-100">
+            <h6 class="mb-0 text-white lh-100">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-airplane" viewBox="0 0 16 16">
+                    <path d="M6.428 1.151C6.708.591 7.213 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l5.17 2.585a1.5 1.5 0 0 1 .83 1.342V12a.5.5 0 0 1-.582.493l-5.507-.918-.375 2.253 1.318 1.318A.5.5 0 0 1 10.5 16h-5a.5.5 0 0 1-.354-.854l1.319-1.318-.376-2.253-5.507.918A.5.5 0 0 1 0 12v-1.382a1.5 1.5 0 0 1 .83-1.342L6 6.691V3c0-.568.14-1.271.428-1.849Zm.894.448C7.111 2.02 7 2.569 7 3v4a.5.5 0 0 1-.276.447l-5.448 2.724a.5.5 0 0 0-.276.447v.792l5.418-.903a.5.5 0 0 1 .575.41l.5 3a.5.5 0 0 1-.14.437L6.708 15h2.586l-.647-.646a.5.5 0 0 1-.14-.436l.5-3a.5.5 0 0 1 .576-.411L15 11.41v-.792a.5.5 0 0 0-.276-.447L9.276 7.447A.5.5 0 0 1 9 7V3c0-.432-.11-.979-.322-1.401C8.458 1.159 8.213 1 8 1c-.213 0-.458.158-.678.599Z"/>
+                </svg>
+                Airlines
+            </h6>
+          </div>
+        </div>
+
+        <!-- Airlines Section -->
+        <div class="card text-left">
+            <div class="card-header">
+                <ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#regAirline" role="tab" aria-controls="airline" aria-selected="true">Register Airline</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#regFlight" role="tab" aria-controls="flight" aria-selected="false">Register Flight</a>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#listAirlinesTab" role="tab" aria-controls="flight" aria-selected="false">List Airlines</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#approveAirline" role="tab" aria-controls="flight" aria-selected="false">Approve Airline</a>
+                    </li>
+                </ul>  
+            </div>
+            <div class="card-body">
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="regAirline" role="tabpanel" aria-labelledby="airline-tab">
+                        <form>
+                            <div class="form-group">
+                              <label for="airlineAddress">Airline Address</label>
+                              <input type="text" required class="form-control" id="regOthersAirlineAddress" aria-describedby="airlineAddressHelp" placeholder="Paste ETH Address here ...">
+                            </div>
+                            <div class="form-group">
+                              <label for="airlineName">Airline Name</label>
+                              <input type="text" required class="form-control" id="regOthersAirlineName" placeholder="Enter Airline Name here ...">
+                            </div>
+                            <small id="registerOthers" class="form-text text-muted"> Note: Only already registered airlines can use this form. </small>
+                            <hr/>
+                            <button type="button" class="btn btn-primary" id="registerOtherAirlineBtn">Register Airline</button>
+                        </form>
+                        <hr/>
+                        <!-- <form>
+                            <div class="form-group">
+                                <label for="myAirlineAddress">Airline Address</label>
+                                <input readonly type="text" class="form-control" id="myAirlineAddress" aria-describedby="airlineAddressHelp" value="Ox0000000000000000000">
+                            </div>
+                            <div class="form-group">
+                                <label for="airlineName">Airline Name</label>
+                                <input type="text" class="form-control" id="regSelfAirlineName" placeholder="Fly Udacity">
+                            </div>
+                            <small id="registerOthers" class="form-text text-muted"> Note: Use this form to indicate interest to join as an airline. Subject to approval from existing airlines.</small>
+                            <hr/>
+                            <button type="button" class="btn btn-primary" id="registerSelfAirlineBtn">Register Self as Airline</button>
+                        </form>
+                        <hr/> -->
+                        <form>
+                            <div class="form-group">
+                                <label for="myAirlineAddress">Your Address</label>
+                                <input readonly type="text" class="form-control" id="myAirlineRegAddress" aria-describedby="airlineAddressHelp" value="Ox0000000000000000000">
+                            </div>
+                            <!-- <div class="form-group">
+                                <label for="myAirlineAddress">Approval Status (Valid only for Registered Airlines) </label>
+                                <input readonly type="text" class="form-control" id="myAirlineApprovalStatus" aria-describedby="myAirlineApprovalStatus" value="Unknown">
+                            </div> -->
+                            <div class="form-group">
+                                <label for="registrationFees">Registration Fee (in ETH)</label>
+                                <input type="number" readonly class="form-control" value="10">
+                            </div>
+                            <small id="registerOthers" class="form-text text-muted"> Note: Only pay AFTER you have been approved!</small>
+                            <hr/>
+                            <button type="button" class="btn btn-primary" id="payRegFeeBtn">Pay Registration Fee </button>
+                            <!-- <button type="button" class="btn btn-primary" id="refreshApprovalStatusBtn">Refresh Approval Status </button> -->
+                        </form>
+
+
+                    </div>
+                    <!-- <div class="tab-pane fade" id="regFlight" role="tabpanel" aria-labelledby="flight-tab">
+                        <form>
+                            <div class="form-group">
+                                <label for="myAirlineAddress">Airline Address</label>
+                                <input readonly type="text" class="form-control" id="myAirlineAddress" aria-describedby="airlineAddressHelp" value="Ox0000000000000000000">
+                            </div>
+                            <div class="form-group">
+                                <label for="flightId">Flight ID</label>
+                                <input type="text" class="form-control" id="flightId" value="FLY12345">
+                            </div> -->
+                            <!-- <div class="form-group">
+                                <label for="flightTimestamp">Flight Time Stamp</label>
+                                <input type="datetime" class="form-control" id="flightTimestamp">
+                            </div> -->
+                            <!-- <div class="form-group">
+                                <label for="flightTimestamp">Flight Time Stamp</label>
+                                <div class='input-group date' id='flightDateTimePicker'>
+                                   <input type='text' class="form-control" id="datetime"/> -->
+                                   <!-- <span class="input-group-addon">
+                                   <span class="glyphicon glyphicon-calendar"></span> -->
+                                   <!-- </span> -->
+                            <!-- </div>
+                            </div>
+                            <small" class="form-text text-muted">You can only register a flight for your airline.</small>
+                            <hr/>
+                            <button type="button" class="btn btn-primary" id="registerFlightBtn">Register Self as Airline</button>
+                        </form>
+                    </div> -->
+                    <!-- <div class="tab-pane fade" role="tabpanel" aria-labelledby="flight-tab">
+                        <ul id="listAirlines">
+                            <li>My Airline 1 - Ox0000000000000000000</li>
+                            <li>My Airline 2 - Ox0000000000000000000</li>
+                        </ul>
+
+                        <button type="button" class="btn btn-primary" id="listAirlinesBtn">Refresh Airline List</button>
+                    </div>  -->
+                    <div class="tab-pane fade" id="approveAirline" role="tabpanel" aria-labelledby="approval-tab">
+                        <form>
+                            <small class="form-text text-muted"> Note: Cast your vote to approve an airline.</small>
+                            <hr/>
+                            <div class="form-group">
+                                <label for="airlineToApproveAddress">Airline Address</label>
+                                <input type="text" class="form-control" id="airlineToApproveAddress"  placeholder="Ox0000000000000000000">
+                            </div>
+                            <button type="button" class="btn btn-primary" id="approveAirlineBtn">Approve Airline</button>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="listAirlinesTab" role="tabpanel" aria-labelledby="flight-tab">
+                        <ul id="listAirlines">
+                            <!-- to be populated from indexjs -->
+                        </ul>
+
+                        <button type="button" class="btn btn-primary" id="refreshAirlinesListBtn">Refresh Airline List</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+  
+        <!-- Passenger Section -->
+
+        <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm">
+            <div class="lh-100">
+              <h6 class="mb-0 text-white lh-100">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
+                    <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z"/>
+                </svg>
+                Passengers
+              </h6>
+            </div>
+        </div>
+
+        <div class="my-3 p-3 bg-white rounded shadow-sm">
+          <h6 class="border-bottom border-gray pb-2 mb-0">Available Operations
+            <br/>
+          </h6>
+          
+          <form>
+            <small id="registerOthers" class="form-text text-muted">1. Purchase Flight Insurance</small>
+            <hr/>
+            <div class="form-group">
+              <label">Airline Address</label>
+              <input type="text" readonly id="selectedFlightAirlineAddress" class="form-control">
+            </div>
+            <div class="form-group">
+              <label>Airline Name</label>
+              <input type="text" readonly id="selectedFlightAirlineName" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="flightIdToInsure">Available Flights</label>
+
+                <select class="form-control" id="insureFlightInputOptions">
+                  <!-- to be populated form indexjs -->
+                </select>
+              </div>
+            <div class="form-group">
+                <label for="insuranceAmount">Insurance Amount (in ETH)</label>
+                <input type="number" id="insuranceAmount" class="form-control" value="0.01" min= "0.0001" max="1" step=".0001">
+            </div>
+            <hr/>
+            <button type="button" class="btn btn-primary" id="buyInsuranceBtn">Buy Insurance</button>
+            <button type="button" class="btn btn-primary" id="refreshAvailableFlightstBtn">Refresh Flights</button>
+        </form>
+
+        <hr/>
+        <form>
+            <small id="registerOthers" class="form-text text-muted">2. Withdrawal your Insurance Payout to your account</small>
+            <hr/>
+            <div class="form-group">
+                <label for="WithdrawalAmount">Available Insurance Premium  (in ETH)</label>
+                <input type="number" readonly id="availableBalance" class="form-control" value="0.0">
+            </div>
+            <hr/>
+            <button type="button" class="btn btn-primary" id="triggerWithdrawalBtn">Trigger Withdrawal</button>
+            <button type="button" class="btn btn-primary" id="checkBalanceBtn">Query Balance (Paid Premiums)</button>
+        </form>
+
+        </div>
+
+
+        <!-- Admin Section -->
+
+        <div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm">
+            <div class="lh-100">
+              <h6 class="mb-0 text-white lh-100">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-server" viewBox="0 0 16 16">
+                    <path d="M1.333 2.667C1.333 1.194 4.318 0 8 0s6.667 1.194 6.667 2.667V4c0 1.473-2.985 2.667-6.667 2.667S1.333 5.473 1.333 4V2.667z"/>
+                    <path d="M1.333 6.334v3C1.333 10.805 4.318 12 8 12s6.667-1.194 6.667-2.667V6.334a6.51 6.51 0 0 1-1.458.79C11.81 7.684 9.967 8 8 8c-1.966 0-3.809-.317-5.208-.876a6.508 6.508 0 0 1-1.458-.79z"/>
+                    <path d="M14.667 11.668a6.51 6.51 0 0 1-1.458.789c-1.4.56-3.242.876-5.21.876-1.966 0-3.809-.316-5.208-.876a6.51 6.51 0 0 1-1.458-.79v1.666C1.333 14.806 4.318 16 8 16s6.667-1.194 6.667-2.667v-1.665z"/>
+                </svg>
+                Admin Section
+              </h6>
+            </div>
+        </div>
+
+        <div class="my-3 p-3 bg-white rounded shadow-sm">
+          <h6 class="border-bottom border-gray pb-2 mb-0">Available Operations
+            <br/>
+          </h6>
+
+          <form>
+            <!-- display account currently used contract interactions  -->
+            <small id="registerOthers" class="form-text text-muted">1. Display web3 account currently used for contract interactions</small>
+            <hr/>
+            <div class="form-group">
+              <label for="activeWeb3Account">Active Web3 Account</label>
+              <input type="text" readonly id="activeWeb3Account" class="form-control" value="unknown">
+              <label for="activeWeb3Account">Active Web3 Role</label>
+              <input type="text" readonly id="activeWeb3AccountRole" class="form-control" value="unknown">
+            </div>
+            <hr/>
+            <small id="registerOthers" class="form-text text-muted">2. Change Active Web3 Account (used to interact with contract)</small>
+            <hr/>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Account List</label>
+              <select class="form-control" id="activeAccountInputOptions">
+                <!-- to be populate from indexjs  -->
+              </select>
+            </div>
+            <button type="button" class="btn btn-primary" id="updateWeb3AccountBtn">Act as Account</button>
+          </form>
+          <hr/>
+          <form>
+            <small id="registerOthers" class="form-text text-muted">2. Update Flight Status</small>
+            <hr/>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Available Flights</label>
+                <select class="form-control" id="flightInputOptions">
+                  <!-- To be populated from indexjs -->
+                </select>
+              </div>
+            <button type="button" class="btn btn-primary" id="updateFlightStatusBtn">Update Flight Status</button>
+            <!-- <button type="button" class="btn btn-primary" id="updateFlightStatusBtn">Refresh Flight List</button> -->
+          </form>
+          <hr/>
+        </div>
+  
+        <!-- <div class="my-3 p-3 bg-white rounded shadow-sm">
+          <h6 class="border-bottom border-gray pb-2 mb-0">Suggestions</h6>
+          <div class="media text-muted pt-3">
+            <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+            <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+              <div class="d-flex justify-content-between align-items-center w-100">
+                <strong class="text-gray-dark">Full Name</strong>
+                <a href="#">Follow</a>
+              </div>
+              <span class="d-block">@username</span>
+            </div>
+          </div>
+          <div class="media text-muted pt-3">
+            <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+            <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+              <div class="d-flex justify-content-between align-items-center w-100">
+                <strong class="text-gray-dark">Full Name</strong>
+                <a href="#">Follow</a>
+              </div>
+              <span class="d-block">@username</span>
+            </div>
+          </div>
+          <div class="media text-muted pt-3">
+            <img data-src="holder.js/32x32?theme=thumb&bg=007bff&fg=007bff&size=1" alt="" class="mr-2 rounded">
+            <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+              <div class="d-flex justify-content-between align-items-center w-100">
+                <strong class="text-gray-dark">Full Name</strong>
+                <a href="#">Follow</a>
+              </div>
+              <span class="d-block">@username</span>
+            </div>
+          </div>
+          <small class="d-block text-right mt-3">
+            <a href="#">All suggestions</a>
+          </small>
+        </div> -->
+      </main>
+
+      <script>
+        function val() {
+            d = document.getElementById("insureFlightInputOptions").value;
+            alert(d);
+        }
+        </script>
+
+      <!-- <script>
+ 
+        // Below code sets format to the
+        // datetimepicker having id as
+        // datetime
+        $('#datetime').datetimepicker({
+            format: 'dd MM YYYY hh:mm:ss a'
+        });
+    </script> -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
